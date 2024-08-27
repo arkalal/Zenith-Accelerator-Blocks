@@ -1,0 +1,107 @@
+@import "../../../styles/mixins.module.scss";
+
+.PiiToJson {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      font-size: $fontSize;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  .PiiToJsonBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .PiiToJsonDocument {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      textarea {
+        height: 150px;
+      }
+    }
+
+    .PiiToJsonFormActions {
+      width: 100%;
+
+      .labels {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+      }
+
+      .PiiToJsonPanel {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        flex-direction: column;
+
+        textarea {
+          padding: 10px;
+          border: 1px solid $borders;
+          border-radius: 5px;
+          font-size: $fontSize;
+          width: 100%;
+          resize: none;
+        }
+
+        label {
+          color: #000;
+          font-weight: 500;
+          font-size: 15px;
+        }
+
+        .schemaTextarea {
+          height: 150px; // Adjust the height as needed
+          width: 100%;
+          resize: vertical; // Allow vertical resizing if desired
+        }
+      }
+    }
+  }
+
+  .PiiToJsonResponse {
+    margin-top: 20px;
+
+    .responseBox {
+      @include response();
+      min-height: 400px;
+      position: relative;
+
+      pre {
+        color: $primary;
+      }
+
+      .placeholder {
+        color: $grey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+      }
+    }
+
+    .loaderContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

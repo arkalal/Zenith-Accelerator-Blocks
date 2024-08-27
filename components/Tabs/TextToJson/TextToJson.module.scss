@@ -1,0 +1,176 @@
+@import "../../../styles/mixins.module.scss";
+
+.TextToJson {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      font-size: $fontSize;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  .TextToJsonBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .TextToJsonDocument {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      textarea {
+        height: 150px;
+      }
+    }
+
+    .TextToJsonFormActions {
+      width: 100%;
+
+      .labels {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+      }
+
+      .TextToJsonPanel {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        flex-direction: column;
+
+        textarea {
+          padding: 10px;
+          border: 1px solid $borders;
+          border-radius: 5px;
+          font-size: $fontSize;
+          width: 100%;
+          resize: none;
+        }
+
+        label {
+          color: #000;
+          font-weight: 500;
+          font-size: 15px;
+        }
+
+        .schemaTextarea {
+          height: 150px; // Adjust the height as needed
+          width: 100%;
+          resize: vertical; // Allow vertical resizing if desired
+        }
+
+        .TextToJsonField,
+        .TextToJsonType {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 30%;
+
+          input,
+          select {
+            padding: 10px;
+            border: 1px solid $borders;
+            border-radius: 10px;
+            font-size: $fontSize;
+          }
+        }
+
+        .TextToJsonField {
+          width: 20%;
+        }
+
+        .TextToJsonType {
+          position: relative;
+          width: 20%;
+
+          .placeholder {
+            position: absolute;
+            top: 34px;
+            left: 10px;
+            color: $grey;
+          }
+
+          select {
+            // margin-top: 22px;
+            appearance: none;
+          }
+
+          .dropdownIcon {
+            position: absolute;
+            right: 10px;
+            top: 70%;
+            transform: translateY(-50%);
+            pointer-events: none;
+          }
+        }
+
+        .entityTrash {
+          color: $error;
+          cursor: pointer;
+          font-size: $fontSize;
+        }
+      }
+
+      .TextToJsonAddEntity {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+        button {
+          background: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+          color: $primary;
+          font-size: $textFontSize;
+        }
+      }
+    }
+  }
+
+  .TextToJsonResponse {
+    margin-top: 20px;
+
+    .responseBox {
+      @include response();
+      min-height: 400px;
+      position: relative;
+
+      pre {
+        color: $primary;
+      }
+
+      .placeholder {
+        color: $grey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+      }
+    }
+
+    .loaderContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

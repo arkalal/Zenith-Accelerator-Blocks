@@ -1,0 +1,129 @@
+@import "../../../styles/mixins.module.scss";
+
+.AudioToJson {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      font-size: $fontSize;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  .AudioToJsonBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .AudioToJsonDocument {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input[type="file"] {
+        width: 100%;
+      }
+    }
+
+    .AudioToJsonFormActions {
+      width: 100%;
+
+      .AudioToJsonPanel {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        flex-direction: column;
+
+        textarea {
+          padding: 10px;
+          border: 1px solid $borders;
+          border-radius: 5px;
+          font-size: $fontSize;
+          width: 100%;
+          resize: none;
+        }
+
+        label {
+          color: #000;
+          font-weight: 500;
+          font-size: 15px;
+        }
+
+        .schemaTextarea {
+          height: 150px;
+          width: 100%;
+          resize: vertical;
+        }
+      }
+    }
+  }
+
+  .AudioToJsonButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    button {
+      background: #fff;
+      color: $primary;
+      padding: 10px 20px;
+      border: 2px solid $primary;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: $fontSize;
+      width: 48%;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background: darken($primary, 10%);
+        color: #fff;
+      }
+
+      &.active {
+        background: $primary;
+        color: #fff;
+      }
+    }
+  }
+
+  .AudioToJsonResponse {
+    margin-top: 20px;
+
+    .responseBox {
+      @include response();
+      min-height: 400px;
+      position: relative;
+
+      pre {
+        color: $primary;
+      }
+
+      .placeholder {
+        color: $grey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+      }
+    }
+
+    .loaderContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+@import "../../../styles/mixins.module.scss";
+
+.FileToJson {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      font-size: $fontSize;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  .FileToJsonBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .FileToJsonDocument {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input[type="file"] {
+        width: 100%;
+      }
+    }
+
+    .FileToJsonFormActions {
+      width: 100%;
+
+      .FileToJsonPanel {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 10px;
+        flex-direction: column;
+
+        textarea {
+          padding: 10px;
+          border: 1px solid $borders;
+          border-radius: 5px;
+          font-size: $fontSize;
+          width: 100%;
+          resize: none;
+        }
+
+        label {
+          color: #000;
+          font-weight: 500;
+          font-size: 15px;
+        }
+
+        .schemaTextarea {
+          height: 150px;
+          width: 100%;
+          resize: vertical;
+        }
+      }
+    }
+  }
+
+  .FileToJsonResponse {
+    margin-top: 20px;
+
+    .responseBox {
+      @include response();
+      min-height: 400px;
+      position: relative;
+
+      pre {
+        color: $primary;
+      }
+
+      .placeholder {
+        color: $grey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+      }
+    }
+
+    .loaderContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+  }
+}

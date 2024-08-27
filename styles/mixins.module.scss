@@ -1,0 +1,50 @@
+$primary: #2e87d9;
+$selectedPrimary: #0c66b9;
+$secondaryBackground: #f4f4f4;
+$white: #ffffff;
+$borders: #e4e4e4;
+$error: #d32f2f;
+$grey: #ababab;
+$lightBlue: #d8ecff;
+
+$fontSize: 17px;
+$textFontSize: 15px;
+
+@mixin response {
+  width: 100%;
+  min-height: 40px;
+  background-color: $white;
+  margin-top: 10px;
+  padding: 15px;
+  height: max-content;
+  border: 1px solid $borders;
+  border-radius: 5px;
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("../fonts/IBMPlexSans-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("../fonts/IBMPlexSans-ExtraLight.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("../fonts/IBMPlexSans-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "IBMPlexSans";
+  src: url("../fonts/IBMPlexSans-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}

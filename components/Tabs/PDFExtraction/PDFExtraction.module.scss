@@ -1,0 +1,53 @@
+@import "../../../styles/mixins.module.scss";
+
+.PDFExtraction {
+  .PDFExtractionResponse {
+    margin-top: 20px;
+
+    div {
+      @include response();
+    }
+  }
+
+  .PDFExtractionFileBox {
+    display: flex;
+    gap: 10px;
+
+    .formActions {
+      align-self: flex-end;
+      button {
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        background-color: lightgray;
+        color: gray;
+        border-radius: 8px;
+      }
+    }
+
+    .PDFExtractionAddFile {
+      border: 1px dotted gray;
+      border-radius: 10px;
+      padding: 20px;
+      width: 60%;
+
+      label {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      span {
+        // margin-top: 15px;
+        font-size: 12px;
+      }
+
+      .dragFile {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+    }
+  }
+}

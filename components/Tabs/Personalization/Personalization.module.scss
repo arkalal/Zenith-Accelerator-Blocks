@@ -1,0 +1,93 @@
+@import "../../../styles/mixins.module.scss";
+
+.Personalization {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      font-size: $fontSize;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  .PersonaliseDocument {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    textarea {
+      height: 150px;
+    }
+  }
+
+  .PersonaliseTargetAudience {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 40px;
+    width: 100%;
+
+    label {
+      font-size: 15px;
+      width: 10%;
+    }
+
+    .PersonTargetBox {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      width: 90%;
+
+      input {
+        font-size: $fontSize;
+        border: none;
+        outline: none;
+        width: 100%;
+      }
+
+      .arrowIcon {
+        color: $primary;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .PersonaliseResponse {
+    margin-top: 40px;
+
+    .loaderContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .responseBox {
+      @include response();
+      min-height: 400px;
+      position: relative;
+      overflow: auto;
+
+      .placeholder {
+        color: $grey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+      }
+    }
+  }
+}

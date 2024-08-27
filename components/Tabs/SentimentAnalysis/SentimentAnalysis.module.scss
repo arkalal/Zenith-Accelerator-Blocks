@@ -1,0 +1,116 @@
+@import "../../../styles/mixins.module.scss";
+
+.SentimentAnalysis {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      font-size: $fontSize;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  .SentAnalysDocument {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    textarea {
+      height: 150px;
+    }
+  }
+
+  .SentAnalysTraining {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 40px;
+
+    .SentAnalysTrainingBtn {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+
+      .plusExample {
+        color: $primary;
+        cursor: pointer;
+      }
+    }
+
+    .SentAnalysNewExample {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      margin-top: 20px;
+      width: 80%;
+      position: relative;
+
+      .exampleFields {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        .newExampleDoc,
+        .newExampleSentiment {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          flex: 1;
+
+          label {
+            width: 100%;
+            color: $grey;
+          }
+
+          textarea {
+            height: 70px;
+          }
+        }
+
+        .newExampleTrash {
+          color: $error;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          right: -60px;
+        }
+      }
+    }
+  }
+
+  .SentAnalysResponse {
+    margin-top: 30px;
+
+    .loaderContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .responseBox {
+      @include response();
+      min-height: 400px;
+      position: relative;
+
+      .placeholder {
+        color: $grey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+      }
+    }
+  }
+}

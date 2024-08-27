@@ -1,0 +1,19 @@
+@import "../../styles/mixins.module.scss";
+
+.NavHeader {
+  border-bottom: 1px solid $borders;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .navImg {
+    height: auto;
+    object-fit: contain;
+    width: 80px;
+  }
+
+  h3 {
+    font-weight: 500;
+  }
+}

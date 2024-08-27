@@ -1,0 +1,43 @@
+@import "../../styles/mixins.module.scss";
+
+.Content {
+  width: 82%;
+  background-color: $white;
+
+  .ContentBlocks {
+    background-color: $white;
+    width: 95%;
+    padding: 10px 0;
+    border-bottom: 1px solid #ebdcd7;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    justify-content: space-between;
+
+    button {
+      background-color: $primary;
+      border-radius: 20px;
+      padding: 5px 20px;
+      color: $white;
+      border: none;
+      outline: none;
+      font-size: $textFontSize;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $selectedPrimary;
+      }
+    }
+
+    h2 {
+      font-weight: 600;
+    }
+  }
+
+  .ContentBox {
+    width: 95%;
+    margin: auto;
+    background-color: $white;
+    margin-top: 50px;
+  }
+}

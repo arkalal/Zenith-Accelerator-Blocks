@@ -1,0 +1,167 @@
+@import "../../../styles/mixins.module.scss";
+
+.EntityExtraction {
+  .formGroup {
+    margin-bottom: 15px;
+
+    label {
+      color: #000;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    input,
+    textarea {
+      padding: 10px;
+      border: 1px solid $borders;
+      border-radius: 5px;
+      font-size: $fontSize;
+      width: 100%;
+      resize: none;
+    }
+  }
+
+  .EntityExtractionBox {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+
+    .EntityExtractionDocument {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      textarea {
+        height: 150px;
+      }
+    }
+
+    .EntityExtractionFormActions {
+      width: 100%;
+
+      .labels {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+      }
+
+      .EntityExtractionPanel {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+
+        .EntityExtractionField,
+        .EntityExtractionType,
+        .EntityExtractionRequired {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          width: 30%;
+
+          input,
+          select {
+            padding: 10px;
+            border: 1px solid $borders;
+            border-radius: 10px;
+            font-size: $fontSize;
+          }
+        }
+
+        .EntityExtractionField {
+          width: 20%;
+        }
+
+        .EntityExtractionType {
+          position: relative;
+          width: 20%;
+
+          .placeholder {
+            position: absolute;
+            top: 34px;
+            left: 10px;
+            color: $grey;
+          }
+
+          select {
+            margin-top: 22px;
+            appearance: none;
+          }
+
+          .dropdownIcon {
+            position: absolute;
+            right: 10px;
+            top: 70%;
+            transform: translateY(-50%);
+            pointer-events: none;
+          }
+        }
+
+        .EntityExtractionRequired {
+          align-items: center;
+          gap: 15px;
+
+          label {
+            font-size: $textFontSize;
+          }
+
+          input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+          }
+        }
+
+        .entityTrash {
+          color: $error;
+          cursor: pointer;
+          font-size: $fontSize;
+        }
+      }
+
+      .EntityExtractionAddEntity {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-top: 10px;
+
+        button {
+          background: transparent;
+          border: none;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          cursor: pointer;
+          color: $primary;
+          font-size: $textFontSize;
+        }
+      }
+    }
+  }
+
+  .EntityExtractionResponse {
+    margin-top: 20px;
+
+    .loaderContainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .responseBox {
+      @include response();
+      min-height: 400px;
+      position: relative;
+
+      .placeholder {
+        color: $grey;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        pointer-events: none;
+      }
+    }
+  }
+}
