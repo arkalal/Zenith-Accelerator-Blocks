@@ -5,6 +5,7 @@ import { BsChevronDown } from "react-icons/bs";
 import { FaArrowUp } from "react-icons/fa6";
 import { PuffLoader } from "react-spinners";
 import axios from "axios";
+import { OpenAI_API_KEY } from "../../../axios/variables";
 
 const QuestionAnswer = () => {
   const [question, setQuestion] = useState("");
@@ -82,7 +83,7 @@ const QuestionAnswer = () => {
         },
         {
           headers: {
-            Authorization: `Bearer sk-proj-B7pojX96daPpJzLsQUlKT3BlbkFJrDZDgo9crdWVfFT7CW5y`,
+            Authorization: `Bearer ${OpenAI_API_KEY}`,
             "Content-Type": "application/json",
             "Access-Control-Allow-Origin": "*",
           },
